@@ -2,13 +2,18 @@
     "produtos": [
         {
             "id": 1,
-            "descricao": "Sapato",
-            "preco": "19,90"
+            "descricao": "Sapatilha Moleka ",
+            "preco": "39,90"
         },
         {
             "id": 2,
-            "descricao": "Sandália",
-            "preco":"29,90"
+            "descricao": "Sandália Louis Vuitton",
+            "preco":"2.590,00"
+        },
+        {
+            "id": 3,
+            "descricao": "Bota de Couro Gucci",
+            "preco":"25.000,00"
         }
     ]
 }
