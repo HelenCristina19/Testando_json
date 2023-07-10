@@ -14,6 +14,11 @@
             "id": 3,
             "descricao": "Bota de Couro Gucci",
             "preco":"25.000,00"
+        },
+        {
+            "id": 4,
+            "descricao": "Bota de salto fino",
+            "preco":"67,80"
         }
     ]
 }
