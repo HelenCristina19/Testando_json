@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaçoes com APIs | Update com PUT</title>
+    <title>Interaçoes com APIs Update com PUT</title>
+    
 </head>
 <body>
 
     <header>
         <a href="./">Home</a>
-        <h1> Update com PUT</h1>
+        <h1 class="title"> Update com PUT</h1>
     </header>
 
-        <form action="" method="post">
+        <form id="form" action="" method="post">
+            <h2 class="subtitle">Cadastro de Produtos</h2>
+            <label id="id" for="id:">ID</label>
+            <input type="text" id = "id">
 
-            <label for="id:">ID</label>
-            <input type="text" id = "id" disabled>
-
-            <label for="descricao:">Descrição</label>
+            <label id="desc" for="descricao:">Descrição</label>
             <input type="text" id = "descricao">
 
-            <label for="preco:">Preço</label>
-            <input type="text" id = "preco">
+            <label id="prec" for="preco:">Preço</label>
+            <input type="text" id="preco">
 
-            <button type ="button" id="btAtualizar">Atualizar</button>
-
-
+            <button type ="button" id="btAtualizar">Cadastrar</button>
         </form>
+  
     <div id = "listaProdutos">
 
     </div>
+
+    <script src="./assets/scripts/estilos.js"></script>
+    <script src="./assets/styles/style.css"></script>
     <script>
 
         document.querySelector('#btAtualizar').addEventListener('click', () => {
@@ -40,16 +43,16 @@
                 'preco': document.querySelector('#preco').value
             }
 
-            const id =  document.querySelector('id').value;
+            const id = document.querySelector('#id').value;
+            
 
-            fetch(`https://localhost:3000/produtos/${id}`, {
+            fetch(`http://localhost:3000/produtos/${id}`, {
                 method :'PUT',
                 headers: {
                     'Content-type': 'application/json'
                 },
                 body: JSON.stringify(dados)
             })
-
             .then(resposta => {
                 if(resposta.ok) {
                     alert('Produto atualizado');
@@ -57,9 +60,12 @@
                 }
             });
 
+
         });
 
-            fetch('http://localhost:3000/produtos',{
+       
+       
+        fetch('http://localhost:3000/produtos',{
             method:'GET',
             headers:{
                 'Content-type': 'application/json'
