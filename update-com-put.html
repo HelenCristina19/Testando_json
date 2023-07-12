@@ -14,17 +14,20 @@
     </header>
 
         <form id="form" action="" method="post">
-            <h2 class="subtitle">Cadastro de Produtos</h2>
-            <label id="id" for="id:">ID</label>
-            <input type="text" id = "id">
+            <h2 class="subtitle">Alteração de Produtos</h2>
+            <label for="id:">ID</label>
+            <input type="text" id = "id"  value="digite o ID do produto">
 
-            <label id="desc" for="descricao:">Descrição</label>
-            <input type="text" id = "descricao">
+            <label for="descricao:">Descrição</label>
+            <input type="text" id = "descricao"  value="digite a descrição do produto">
 
-            <label id="prec" for="preco:">Preço</label>
-            <input type="text" id="preco">
+            <label for="preco:">Preço</label>
+            <input type="text" id="preco"  value="digite o preço do produto">
 
-            <button type ="button" id="btAtualizar">Cadastrar</button>
+            <div class="button">
+            <button type ="button" id="btAtualizar">Atualizar</button>
+            <button type ="button" id="btCancelar">Cancelar</button>
+        </div>
         </form>
   
     <div id = "listaProdutos">

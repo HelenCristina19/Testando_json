@@ -1,0 +1,129 @@
+
+/*estilizando o formulário*/
+
+.produtos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+
+}
+
+body{
+    background-color:rgba(255, 241, 193, 1)
+     ;
+}
+
+#form {
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    margin-top: 60px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    height: 339px;
+    flex-shrink: 0;
+    padding: 38px;
+ 
+}
+
+#preco, #descricao, #id {
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    top: 239px;
+    color: #949494;
+    width: 304px;
+    height: 34px;
+    left: 564px;
+    right: 230px;
+    border-radius: 4px;
+    background-color: #FEFFE4;
+    border: 1px solid #000000
+}
+
+#btAtualizar {
+    background-color: #48A4FA;
+    width: 167px;
+    height: 46px;
+    font-size: 20px;
+    top: 464px;
+    left: 569px;
+    border-radius: 4px;
+    color: #FEFFE4;
+}
+
+#btCancelar {
+    background-color: #F59999;
+    width: 118px;
+    height: 46px;
+    top: 464px;
+    left: 754px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+label {
+    color: #000;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: center;
+    width: 243px;
+    height: 38px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.delete-button {
+    background-color: red;
+    font-size: 10pt;
+    border-radius: 40%;
+    color: aliceblue;
+    font-weight: bold;
+
+    
+}
+
+.title {
+    color: #000;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/*estilizando a aparte abaixo*/
