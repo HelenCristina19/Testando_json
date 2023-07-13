@@ -4,42 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaçoes com APIs Update com PUT</title>
-    
 </head>
-<body>
+
+<style>
+    button:hover {
+        background-color: blue;
+        color:white;
+        transition: all 0.5s ease-in;
+        transition-delay: 0.2s; 
+        transform: scale(1.1);
+    }
+</style>
+
+<body class="layout">
 
     <header>
         <a href="./">Home</a>
         <h1 class="title"> Update com PUT</h1>
     </header>
-
+    <div id="conteiner">
         <form id="form" action="" method="post">
             <h2 class="subtitle">Alteração de Produtos</h2>
             <label for="id:">ID</label>
-            <input type="text" id = "id"  value="digite o ID do produto">
+            <input type="text" id="id" value="digite o ID do produto">
 
             <label for="descricao:">Descrição</label>
-            <input type="text" id = "descricao"  value="digite a descrição do produto">
+            <input type="text" id="descricao" value="digite a descrição do produto">
 
             <label for="preco:">Preço</label>
-            <input type="text" id="preco"  value="digite o preço do produto">
+            <input type="text" id="preco" value="digite o preço do produto">
 
+             
             <div class="button">
-            <button type ="button" id="btAtualizar">Atualizar</button>
-            <button type ="button" id="btCancelar">Cancelar</button>
-        </div>
+                <button type="button" id="btAtualizar">Atualizar</button>
+                <button type="button" id="btCancelar">Cancelar</button>
+            </div>
+          
         </form>
-  
-    <div id = "listaProdutos">
+      
+    </div>
+    <div id="listaProdutos">
+        <h2 class="lista">Lista de Produtos</h2>
 
     </div>
 
     <script src="./assets/scripts/estilos.js"></script>
-    <script src="./assets/styles/style.css"></script>
+
     <script>
 
         document.querySelector('#btAtualizar').addEventListener('click', () => {
-            
+
             const dados = {
                 'id': null,
                 'descricao': document.querySelector('#descricao').value,
@@ -47,55 +61,59 @@
             }
 
             const id = document.querySelector('#id').value;
-            
+
 
             fetch(`http://localhost:3000/produtos/${id}`, {
-                method :'PUT',
+                method: 'PUT',
                 headers: {
                     'Content-type': 'application/json'
                 },
                 body: JSON.stringify(dados)
             })
-            .then(resposta => {
-                if(resposta.ok) {
-                    alert('Produto atualizado');
-                    location.reload();
-                }
-            });
+                .then(resposta => {
+                    if (resposta.ok) {
+                        alert('Produto Atualizado');
+                        location.reload();
+                    }
+                });
 
 
         });
 
-       
-       
-        fetch('http://localhost:3000/produtos',{
-            method:'GET',
-            headers:{
+
+
+        
+
+        fetch('http://localhost:3000/produtos', {
+            method: 'GET',
+            headers: {
                 'Content-type': 'application/json'
             }
-        })     
+        })
             .then(resposta => resposta.json())
             .then(resposta => {
 
-                for(let i = 0;i < resposta.length; i++){
+                for (let i = 0; i < resposta.length; i++) {
 
                     const ul = document.createElement('ul');
+                    ul.classList.add('produto')
 
                     ul.appendChild(document.createElement('li')).
-                    innerHTML = resposta[i].id;
+                        innerHTML = resposta[i].id;
                     ul.appendChild(document.createElement('li')).
-                    innerHTML = resposta[i].descricao;
+                        innerHTML = resposta[i].descricao;
                     ul.appendChild(document.createElement('li')).
-                    innerHTML = resposta [i].preco;
-                
+                        innerHTML = resposta[i].preco;
+
 
                     document.querySelector('#listaProdutos').appendChild
-                    (ul);
+                        (ul);
                 }
-                })
-               
-            
+            })
+
+
     </script>
-        
+
 </body>
+
 </html>

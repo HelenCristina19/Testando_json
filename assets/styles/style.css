@@ -1,22 +1,14 @@
-
 /*estilizando o formulário*/
 
-.produtos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    list-style: none;
-
-}
-
-body{
-    background-color:rgba(255, 241, 193, 1)
-     ;
+.delete-button {
+    background-color: red;
+    font-size: 10pt;
+    border-radius: 40%;
+    color: aliceblue;
+    font-weight: bold;
 }
 
 #form {
-
     display: flex;
     flex-direction: column;
     border-radius: 2px;
@@ -27,87 +19,72 @@ body{
     height: 339px;
     flex-shrink: 0;
     padding: 38px;
- 
+   
+}
+label{
+    margin-top: 20px;
 }
 
-#preco, #descricao, #id {
+#btAtualizar {
+    font-size: 18px;
+    width: 167px;
+    height: 46px;
+    color: #FFF;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 4px;
+    background: #48A4FA;
+    flex-shrink: 0;
+}
+
+#btCancelar {
+    width: 118px;
+    height: 46px;
+    color: #444444;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 4px;
+    background-color: #F59999;
+}
+
+.layout {
+    padding: 50px;
+    width: 1440px;
+    height: 1024px;
+    background-color: #FEFFE4;
+
+}
+
+#preco,
+#descricao,
+#id {
+    color: #9A9A9A;
     font-family: Ubuntu;
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0em;
-    text-align: left;
-    top: 239px;
-    color: #949494;
-    width: 304px;
-    height: 34px;
-    left: 564px;
-    right: 230px;
-    border-radius: 4px;
-    background-color: #FEFFE4;
-    border: 1px solid #000000
-}
-
-#btAtualizar {
-    background-color: #48A4FA;
-    width: 167px;
-    height: 46px;
-    font-size: 20px;
-    top: 464px;
-    left: 569px;
-    border-radius: 4px;
-    color: #FEFFE4;
-}
-
-#btCancelar {
-    background-color: #F59999;
-    width: 118px;
-    height: 46px;
-    top: 464px;
-    left: 754px;
-    border-radius: 4px;
-    font-size: 12px;
-}
-
-label {
-    color: #000;
-    text-align: center;
-    font-family: Ubuntu;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
     line-height: normal;
-    text-align: left;
-    margin-top: 10px;
+    justify-content: space-around;
 }
 
-.subtitle {
+.button {
     display: flex;
-    justify-content: center;
-    width: 243px;
-    height: 38px;
-    flex-direction: column;
-    flex-shrink: 0;
-    color: #000;
-    text-align: center;
-    font-family: Ubuntu;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: center;
-    margin-left: 30px;
+    justify-content: space-between;
+    margin-top: 40px;
 }
 
-.delete-button {
-    background-color: red;
-    font-size: 10pt;
-    border-radius: 40%;
-    color: aliceblue;
-    font-weight: bold;
-
-    
+#conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
 }
 
 .title {
@@ -120,10 +97,55 @@ label {
     line-height: normal;
 }
 
-.button {
+.subtitle {
     display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+    justify-content: center;
+    width: 243px;
+    height: 38px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: #000;
+    font-family: Ubuntu;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-left: 30px;
 }
 
 /*estilizando a aparte abaixo*/
+
+.produto:nth-child(even) {
+    background-color: #FFF1C1;
+    border-bottom: 1px solid #000;
+
+}
+
+.produto:nth-child(odd) {
+    background-color: #FFF;
+    border-bottom: 1px solid #000;
+}
+
+.lista {
+    width: 243px;
+    height: 38px;
+    top: 610px;
+    left: 54px;
+    font-family: Ubuntu;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+.produto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
