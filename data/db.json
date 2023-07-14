@@ -2,23 +2,29 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "Sapatilha Moleka ",
-      "preco": "39,90"
+      "descricao": "Sandália Blosson (Louis Vuitton)",
+      "preco": "R$ 8.960,00"
     },
     {
       "id": 2,
-      "descricao": "Sandália Louis Vuitton",
-      "preco": "2.590,00"
+      "descricao": "Bolsa Pochette Métis East West (Louis Vuitton)",
+      "preco": "R$ 20.700,00"
     },
     {
       "id": 3,
       "descricao": "Bota de Couro Gucci",
-      "preco": "25.000,00"
+      "preco": "R$ 25.000,00"
     },
     {
       "id": 4,
-      "descricao": "Bota de salto fino",
-      "preco": "67,80"
+      "descricao": "Ankle Boot Silhouette (Louis Vuitton)",
+      "preco": "R$ 6,750,O0"
+    },
+    {
+      "id": 5,
+      "descricao": "Tênis Run Away (Louis Vuitton)",
+      "preco": "R$ 7,850,00"
+
     }
   ]
 }
