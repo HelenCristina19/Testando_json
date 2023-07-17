@@ -40,7 +40,7 @@ label{
     flex-shrink: 0;
 }
 
-#btCancelar {
+#btCancelar{
     width: 118px;
     height: 46px;
     color: #444444;
@@ -52,6 +52,14 @@ label{
     line-height: normal;
     border-radius: 4px;
     background-color: #F59999;
+}
+
+.bt:disabled{
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.bt:enabled{
+
 }
 
 .layout {
@@ -148,4 +156,5 @@ label{
     list-style: none;
     margin: 0;
     padding: 10px;
+  
 }
