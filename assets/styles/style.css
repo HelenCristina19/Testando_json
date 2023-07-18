@@ -25,6 +25,8 @@ label{
     margin-top: 20px;
 }
 
+/*estilização dos botões*/
+
 #btAtualizar {
     font-size: 18px;
     width: 167px;
@@ -38,6 +40,11 @@ label{
     border-radius: 4px;
     background: #48A4FA;
     flex-shrink: 0;
+}
+
+#btAtualizar:hover{
+    background-color: blue
+
 }
 
 #btCancelar{
@@ -54,12 +61,19 @@ label{
     background-color: #F59999;
 }
 
-.bt:disabled{
-    cursor: not-allowed;
-    box-shadow: none;
-}
-.bt:enabled{
+#btCancelar:disabled{
+    background-color: #FFF;
+    color: #9A9A9A;
+    border: 1px solid #c0b7b7;
+    cursor:not-allowed;
 
+
+}
+#btAtualizar:disabled{
+    background-color:rgb(199, 192, 192);
+    color: rgb(131, 114, 114);
+    cursor:not-allowed;
+    
 }
 
 .layout {
@@ -86,6 +100,13 @@ label{
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+}
+button:hover {
+    background-color: blue;
+    color:white;
+    transition: all 0.5s ease-in;
+    transition-delay: 0.2s; 
+    transform: scale(1.1);
 }
 
 #conteiner {
