@@ -1,33 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaçoes com APIs Update com PUT</title>
 </head>
 
-<style>
-    button:hover {
-        background-color: blue;
-        color:white;
-        transition: all 0.5s ease-in;
-        transition-delay: 0.2s; 
-        transform: scale(1.1);
-    }
-</style>
-
 <body class="layout">
 
     <header>
         <a href="./">Home</a>
-        <h1 class="title"> Update com PUT</h1>
+        <h1 class="titulo"> Update com PUT</h1>
     </header>
-
-    <script src="./assets/scripts/estilos.js"></script>
     <div id="conteiner">
-
         <form id="form" action="" method="post">
-            <h2 class="subtitle">Alteração de Produtos</h2>
+            <h2 class="titulo">Alteração de Produtos</h2>
             <label for="id:">ID</label>
             <input type="text" id="id" placeholder="digite o ID do produto">
 
@@ -37,25 +25,25 @@
             <label for="preco:">Preço</label>
             <input type="text" id="preco" placeholder="digite o preço do produto">
 
-             
-            <div class="button">
+            <div class="bts">
                 <button type="button" id="btAtualizar" disabled>Atualizar</button>
-              
-                <button type="button" id="btCancelar" disabled>Cancelar</button>
+                <button type="reset" id="btCancelar" disabled>Cancelar</button>
             </div>
-          
+
         </form>
-      
     </div>
     <div id="listaProdutos">
-        <h2 class="lista">Lista de Produtos</h2>
+        <h2>Lista de Produtos</h2>
 
     </div>
+
+    <script src="./assets/scripts/estilos.js"></script>
+
     <script>
-       //Desafio 1
-       document.querySelector('#listaProdutos').addEventListener('click', event => {
+        //Desafio 1
+        document.querySelector('#listaProdutos').addEventListener('click', event => {
             //console.Log(event.target);
-            if(event.target.closest('ul').classList.contains('produto')) {
+            if (event.target.closest('ul').classList.contains('produto')) {
                 // console.Log (event.target);
                 const elementoBase = event.target.closest('ul');
 
@@ -64,9 +52,29 @@
                 document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
 
                 document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
-                
+
             }
         });
+
+             //desafio 2
+            function verificaSeInputsestaoPreenchidos() {
+                 const idPreechido = document.querySelector('input#id').value !== "";
+                 const descricaoPreechido = document.querySelector('input#descricao').value !== "";
+                 const precoPreechido = document.querySelector('input#preco').value !== "";
+
+                 if (idPreechido || descricaoPreechido || precoPreenchido) {
+                    document.querySelector('button#btCancelar').removeAttribute('disabled');
+                } else {
+                    document.querySelector('button#btCancelar').setAttribute('disabled', '');
+                }
+            }
+            document.querySelector('form').addEventListener('reset', () => {
+                document.querySelector('button#btCancelar').setAttribute('disabled', '');
+            });
+
+            document.querySelector('form').addEventListener('keyup', () => {
+                verificaSeInputsEstaoPreenchidos();
+            })
 
         document.querySelector('#btAtualizar').addEventListener('click', () => {
 
@@ -92,12 +100,7 @@
                         location.reload();
                     }
                 });
-
-
         });
-
-
-
         fetch('http://localhost:3000/produtos', {
             method: 'GET',
             headers: {
@@ -129,8 +132,12 @@
                     ul.append(liId, liDescricao, liPreco);
                     document.querySelector('#listaProdutos').append(ul);
 
-               };
+                };
             })
+
+
+
+
 
 
     </script>
