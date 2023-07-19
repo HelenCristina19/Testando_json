@@ -7,15 +7,26 @@
     <title>Interaçoes com APIs Update com PUT</title>
 </head>
 
-<body class="layout">
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="./index.html"data-test="home">Home</a></li>
+            <li><a href="./read-com-get.html">Read com Get</a></li>          
+            <li><a href="./update-com-put.html">Update com Put</a></li>
+            <li><a href="./delete-com-delete.html">Delete com Delete</a></li>
+            <li><a href="./create-com-post.html">Create com Post</a></li>
+
+        </ul>
+    </nav>
 
     <header>
-        <a href="./">Home</a>
-        <h1 class="titulo"> Update com PUT</h1>
+        <h1 class="title"> Update com PUT</h1>
     </header>
+
     <div id="conteiner">
         <form id="form" action="" method="post">
-            <h2 class="titulo">Alteração de Produtos</h2>
+            <h2 class="subtitle">Alteração de Produtos</h2>
             <label for="id:">ID</label>
             <input type="text" id="id" placeholder="digite o ID do produto">
 
@@ -25,7 +36,7 @@
             <label for="preco:">Preço</label>
             <input type="text" id="preco" placeholder="digite o preço do produto">
 
-            <div class="bts">
+            <div class="button">
                 <button type="button" id="btAtualizar" disabled>Atualizar</button>
                 <button type="reset" id="btCancelar" disabled>Cancelar</button>
             </div>
@@ -33,114 +44,14 @@
         </form>
     </div>
     <div id="listaProdutos">
+
         <h2>Lista de Produtos</h2>
 
     </div>
 
-    <script src="./assets/scripts/estilos.js"></script>
-
-    <script>
-        //Desafio 1
-        document.querySelector('#listaProdutos').addEventListener('click', event => {
-            //console.Log(event.target);
-            if (event.target.closest('ul').classList.contains('produto')) {
-                // console.Log (event.target);
-                const elementoBase = event.target.closest('ul');
-
-                document.querySelector('input#id').value = elementoBase.querySelector('[data-produto="id"]').innerHTML;
-
-                document.querySelector('input#descricao').value = elementoBase.querySelector('[data-produto="descricao"]').innerHTML;
-
-                document.querySelector('input#preco').value = elementoBase.querySelector('[data-produto="preco"]').innerHTML;
-
-            }
-        });
-
-             //desafio 2
-            function verificaSeInputsestaoPreenchidos() {
-                 const idPreechido = document.querySelector('input#id').value !== "";
-                 const descricaoPreechido = document.querySelector('input#descricao').value !== "";
-                 const precoPreechido = document.querySelector('input#preco').value !== "";
-
-                 if (idPreechido || descricaoPreechido || precoPreenchido) {
-                    document.querySelector('button#btCancelar').removeAttribute('disabled');
-                } else {
-                    document.querySelector('button#btCancelar').setAttribute('disabled', '');
-                }
-            }
-            document.querySelector('form').addEventListener('reset', () => {
-                document.querySelector('button#btCancelar').setAttribute('disabled', '');
-            });
-
-            document.querySelector('form').addEventListener('keyup', () => {
-                verificaSeInputsEstaoPreenchidos();
-            })
-
-        document.querySelector('#btAtualizar').addEventListener('click', () => {
-
-            const dados = {
-                'id': null,
-                'descricao': document.querySelector('#descricao').value,
-                'preco': document.querySelector('#preco').value
-            }
-
-            const id = document.querySelector('#id').value;
-
-
-            fetch(`http://localhost:3000/produtos/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(dados)
-            })
-                .then(resposta => {
-                    if (resposta.ok) {
-                        alert('Produto Atualizado');
-                        location.reload();
-                    }
-                });
-        });
-        fetch('http://localhost:3000/produtos', {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-            .then(resposta => resposta.json())
-            .then(resposta => {
-
-                for (let i = 0; i < resposta.length; i++) {
-
-                    const ul = document.createElement('ul');
-                    ul.id = resposta[i].id;
-                    ul.classList.add('produto');
-
-                    const liId = document.createElement('li');
-                    liId.setAttribute('data-produto', 'id');
-                    liId.innerHTML = resposta[i].id;
-                    liId.classList.add('produto-id');
-
-                    const liDescricao = document.createElement('li');
-                    liDescricao.setAttribute('data-produto', 'descricao')
-                    liDescricao.innerHTML = resposta[i].descricao;
-
-                    const liPreco = document.createElement('li');
-                    liPreco.setAttribute('data-produto', 'preco')
-                    liPreco.innerHTML = resposta[i].preco;
-
-                    ul.append(liId, liDescricao, liPreco);
-                    document.querySelector('#listaProdutos').append(ul);
-
-                };
-            })
-
-
-
-
-
-
-    </script>
+   
+      <script src="./assets/scripts/estilos.js"></script>
+      <script type="module" src="./assets/scripts/update-com-post.js"></script>
 
 </body>
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read com Get</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="./index.html"data-test="home">Home</a></li>
+            <li><a href="./read-com-get.html">Read com Get</a></li>          
+            <li><a href="./update-com-put.html">Update com Put</a></li>
+            <li><a href="./delete-com-delete.html">Delete com Delete</a></li>
+            <li><a href="./create-com-post.html">Create com Post</a></li>
+
+        </ul>
+    </nav>
+
+    <header>
+        <h1 class="title">Read com GET</h1>
+    </header>
+
+    <div id="listaprodutos"></div>
+
+    <script>
+      import { buscaProdutos } from "./assets/scripts/estilos.js";
+      buscaProdutos();
+    </script>
+
+    <script src="./assets/scripts/estilos.js"> </script>
+
+</body>
+
+</html>

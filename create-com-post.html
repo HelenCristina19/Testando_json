@@ -6,12 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaçoes com APIs Create com POST</title>
 </head>
+
 <body>
 
+    <nav class="navbar">
+        <ul>
+            <li><a href="./index.html"data-test="home">Home</a></li>
+            <li><a href="./read-com-get.html">Read com Get</a></li>          
+            <li><a href="./update-com-put.html">Update com Put</a></li>
+            <li><a href="./delete-com-delete.html">Delete com Delete</a></li>
+            <li><a href="./create-com-post.html">Create com Post</a></li>
+
+        </ul>
+    </nav>
+
     <header>
-        <a href="./">Home</a>
-        <h1> Create com POST</h1>
+        <h1 class="title">Create com POST</h1>
     </header>
+
         <form action="" method="post">
             <label for="id:">ID</label>
             <input type="text" id = "id" disabled>
@@ -24,11 +36,14 @@
 
             <button type ="button" id="btCadastrar">Cadastrar</button>
 
-
         </form>
+
     <div id = "listaProdutos">
 
+        <h2>Lista de Produtos</h2>
+
     </div>
+
     <script>
 
         document.querySelector('#btCadastrar').addEventListener('click', () => {
@@ -82,9 +97,9 @@
                     (ul);
                 }
                 })
-               
             
     </script>
+
     <script src="./assets/scripts/estilos.js"></script>
         
 </body>

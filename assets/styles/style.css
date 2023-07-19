@@ -1,3 +1,30 @@
+/*Estilizando o menu de navegação*/
+
+.navbar {
+    display: flex;
+  
+    
+    background-color: #FFF1C1;
+    border: 1px solid #000;
+   
+
+}
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.navbar  a {
+    color: #181616;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-style: italic;
+   
+
+}
+
+
+
 /*estilizando o formulário*/
 
 .delete-button {
@@ -6,6 +33,15 @@
     border-radius: 40%;
     color: aliceblue;
     font-weight: bold;
+}
+
+
+body {
+    padding: 50px;
+    width: 1440px;
+    height: 1024px;
+    background-color: #FEFFE4;
+
 }
 
 #form {
@@ -76,12 +112,17 @@ label{
     
 }
 
-.layout {
-    padding: 50px;
-    width: 1440px;
-    height: 1024px;
-    background-color: #FEFFE4;
-
+.button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+button:hover {
+    background-color: blue;
+    color:white;
+    transition: all 0.5s ease-in;
+    transition-delay: 0.2s; 
+    transform: scale(1.1);
 }
 
 #preco,
@@ -96,18 +137,6 @@ label{
     justify-content: space-around;
 }
 
-.button {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-}
-button:hover {
-    background-color: blue;
-    color:white;
-    transition: all 0.5s ease-in;
-    transition-delay: 0.2s; 
-    transform: scale(1.1);
-}
 
 #conteiner {
     display: flex;
@@ -118,6 +147,8 @@ button:hover {
 
 .title {
     color: #000;
+    display: flex;
+    justify-content: center;
     text-align: center;
     font-family: Ubuntu;
     font-size: 32px;
