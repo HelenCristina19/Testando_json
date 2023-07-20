@@ -66,6 +66,7 @@
                 for(let i = 0;i < resposta.length; i++){
 
                     const ul = document.createElement('ul');
+                    ul.id = resposta[i].id;
                     ul.classList.add('produto');
 
                     ul.appendChild(document.createElement('li')).
