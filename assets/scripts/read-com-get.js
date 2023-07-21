@@ -1,6 +1,6 @@
 function buscaProdutos(mostrabtDelete = false) {
 
-    fetch('http://localhost:3002/produtos', {
+    fetch('http://localhost:3000/produtos', {
     })
 
        

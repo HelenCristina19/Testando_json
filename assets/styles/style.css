@@ -42,7 +42,7 @@ body {
 
 }
 
-#form {
+#formulario {
     display: flex;
     flex-direction: column;
     border-radius: 2px;
@@ -52,9 +52,23 @@ body {
     width: 300px;
     height: 339px;
     flex-shrink: 0;
-    padding: 38px;
-   
+    padding: 38px; 
 }
+#form {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: Ubuntu;
+  margin-left: 80px;
+  margin-bottom: 80px;
+  margin-top: 40px;
+  font-style: italic;
+  font-size: 16px;
+}
+.imput{
+    margin: 10px;
+}
+
 label{
     margin-top: 20px;
 }
@@ -79,6 +93,12 @@ label{
 #btAtualizar:hover{
     background-color: blue
 
+}
+#btCadastrar{
+    
+   border-width: 10px;
+   border-color:  #FFF1C1;
+    border-radius: 10px;
 }
 
 #btCancelar{
@@ -171,40 +191,68 @@ button:hover {
     text-align: center;
     margin-left: 30px;
 }
+#btApagar{
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    font-family: Ubuntu;
+    margin-left: 650px;
+    margin-bottom: 40px;
+    font-style: italic;
+   
+
+
+}
 
 /*estilizando a aparte abaixo*/
 
 .produto:nth-child(even) {
     background-color: #FFF1C1;
-    border-bottom: 1px solid #000;
-
+    
 }
 
 .produto:nth-child(odd) {
     background-color: #FFF;
-    border-bottom: 1px solid #000;
 }
 
-.lista {
-    width: 243px;
-    height: 38px;
-    top: 610px;
-    left: 54px;
-    font-family: Ubuntu;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0em;
-    text-align: left;
-    
+#listaProdutos {
+    width: 100%;
+    padding: 0 3.4rem;
+    margin-bottom: 5.7rem;
 }
+    
 .produto {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
     list-style: none;
-    margin: 0;
+    border-bottom: 1px solid #000;
+    min-height: 2.6875rem;
+    margin-bottom: .25rem;
     padding: 10px;
-  
+    margin: 0;
+    cursor: pointer;
+}
+.produto li:first-child {
+    margin: 0 2.4rem;
+}
+
+.produto li[data-produto="id"] {
+    margin-left: 2.4rem;
+    text-align: start;
+    width: 10rem;
+}
+
+.produto li[data-produto="descricao"] {
+    text-align: start;
+    width: 60%;
+}
+
+.produto li:last-child {
+    text-align: end;
+    width: 10rem;
+    margin-right: 2.4rem;
 }

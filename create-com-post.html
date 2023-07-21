@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,8 @@
 
     <nav class="navbar">
         <ul>
-            <li><a href="./index.html"data-test="home">Home</a></li>
-            <li><a href="./read-com-get.html">Read com Get</a></li>          
+            <li><a href="./index.html" data-test="home">Home</a></li>
+            <li><a href="./read-com-get.html">Read com Get</a></li>
             <li><a href="./update-com-put.html">Update com Put</a></li>
             <li><a href="./delete-com-delete.html">Delete com Delete</a></li>
             <li><a href="./create-com-post.html">Create com Post</a></li>
@@ -23,63 +24,64 @@
         <h1 class="title">Create com POST</h1>
     </header>
 
-    <form action="" method="post">
+    <form id="form" action="" method="post">
         <label for="id:">ID</label>
-        <input type="text" id = "id" disabled>
+        <input class="imput" type="text" id="id" placeholder="Digite...">
 
         <label for="descricao:">Descrição</label>
-        <input type="text" id = "descricao">
+        <input class="imput" type="text" id="descricao" placeholder="Digite...">
 
         <label for="preco:">Preço</label>
-        <input type="text" id = "preco">
+        <input class="imput" type="text" id="preco" placeholder="Digite...">
 
-        <button type ="button" id="btCadastrar">Cadastrar</button>
+        <button type="button" id="btCadastrar">Cadastrar</button>
 
 
     </form>
-<div id = "listaProdutos">
+    <div id="listaProdutos">
 
-    <h2>Lista de Produtos</h2>
+        <h2>Lista de Produtos</h2>
 
-</div>
-<script type="module" >
-    import{ buscaProdutos } from './assets/scripts/create-com-post.js';
-    buscaProdutos()
+    </div>
+    <script type="module">
+        import { buscaProdutos } from './assets/scripts/create-com-post.js';
+        buscaProdutos()
 
-</script>
- 
-<script>
+    </script>
+
+    <script>
 
 
-       
-    fetch('http://localhost:3000/produtos',{
-        method:'GET',
-        headers:{
-            'Content-type': 'application/json'
-        }
-    })
-        .then(resposta => resposta.json())
-        .then(resposta =>{
-            for(let i = 0;i < resposta.length; i++){
 
-                const ul = document.createElement('ul');
-                ul.classList.add('produto');
-
-                ul.appendChild(document.createElement('li')).
-                innerHTML = resposta[i].id;
-                ul.appendChild(document.createElement('li')).
-                innerHTML = resposta[i].descricao;
-                ul.appendChild(document.createElement('li')).
-                innerHTML = resposta [i].preco;
-            
-
-                document.querySelector('#listaProdutos').appendChild
-                (ul);
+        fetch('http://localhost:3000/produtos', {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
             }
-           
         })
-</script>
-<script src="./assets/scripts/estilos.js"></script>
-    
+            .then(resposta => resposta.json())
+            .then(resposta => {
+                for (let i = 0; i < resposta.length; i++) {
+
+                    const ul = document.createElement('ul');
+                    ul.classList.add('produto');
+
+                    ul.appendChild(document.createElement('li')).
+                        innerHTML = resposta[i].id;
+                    ul.appendChild(document.createElement('li')).
+                        innerHTML = resposta[i].descricao;
+                    ul.appendChild(document.createElement('li')).
+                        innerHTML = resposta[i].preco;
+
+
+                    document.querySelector('#listaProdutos').appendChild
+                        (ul);
+                }
+
+            })
+    </script>
+    <script src="./assets/scripts/estilos.js"></script>
+
 </body>
+
 </html>

@@ -25,7 +25,7 @@
     </header>
 
     <div id="conteiner">
-        <form id="form" action="" method="post">
+        <form id="formulario" action="" method="post">
             <h2 class="subtitle">Alteração de Produtos</h2>
             <label for="id:">ID</label>
             <input type="text" id="id" placeholder="digite o ID do produto">
@@ -55,44 +55,34 @@
 
       <script>
        
-        fetch('http://localhost:3000/produtos',{
+       fetch('http://localhost:3000/produtos',{
             method:'GET',
             headers:{
                 'Content-type': 'application/json'
             }
         })
-             for (let i = 0; i < resposta.length; i++) {
+            .then(resposta => resposta.json())
+            .then(resposta =>{
+                for(let i = 0;i < resposta.length; i++){
+
                     const ul = document.createElement('ul');
-                    ul.id = resposta[i].id;
                     ul.classList.add('produto');
-                    
-                    const liId = document.createElement('li');
-                    liId.setAttribute('data-produto' , 'id');
-                    liId.innerHTML = resposta[i].id;
-                    liId.classList.add('produto-id');
 
-                    const liDescricao = document.createElement('li');
-                    liDescricao.setAttribute('data-produto' , 'descricao');
-                    liDescricao.innerHTML = resposta[i].descricao;
-                    
+                    ul.appendChild(document.createElement('li')).
+                    innerHTML = resposta[i].id;
+                    ul.appendChild(document.createElement('li')).
+                    innerHTML = resposta[i].descricao;
+                    ul.appendChild(document.createElement('li')).
+                    innerHTML = resposta [i].preco;
+                
 
-                    const liPreco = document.createElement('li');
-                    liPreco.setAttribute('data-produto' , 'preco');
-                    liPreco.innerHTML = resposta[i].preco;
-
-                   
-
-                    ul.append(liId , liDescricao , liPreco);
-                    
-
-                    document.querySelector('#listaProdutos').appendChild(ul);
+                    document.querySelector('#listaProdutos').appendChild
+                    (ul);
                 }
-
+               
             })
-
     </script>
-    <script src=" ./assets/scripts/estilos.js"></script>
-    <script type="module" src=" ./assets/scripts/update-com-put.js"></script>
+   
 
 </body>
 
